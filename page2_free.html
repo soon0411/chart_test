@@ -245,67 +245,67 @@
                                     <div class="card-body overflow-hidden">
                                         <div id="chart">
                                             <div id="chart-container"></div>
-                                        <script type="text/javascript">
-                                         var dom = document.getElementById('chart-container');
-                                            var myChart = echarts.init(dom, 'dark', {
-                                            renderer: 'canvas',
-                                            useDirtyRect: false
-                                            });
-                                            var app = {};
+                                                <script type="text/javascript">
+                                                var dom = document.getElementById('chart-container');
+                                                    var myChart = echarts.init(dom, 'dark', {
+                                                    renderer: 'canvas',
+                                                    useDirtyRect: false
+                                                    });
+                                                    var app = {};
 
-                                            var option;
+                                                    var option;
 
-                                            option = {
-                                                color: [ '#042E9A',
-                                                '#0038C8',
-                                                '#1F5CFA',
-                                                '#02B1B1',
-                                                '#02B15A',
-                                                '#028543',
-                                                '#DE58F4'
+                                                    option = {
+                                                        color: [ '#042E9A',
+                                                        '#0038C8',
+                                                        '#1F5CFA',
+                                                        '#02B1B1',
+                                                        '#02B15A',
+                                                        '#028543',
+                                                        '#DE58F4'
 
-                                                ],
-                                            title: {
-                                                text: 'ECharts Example'
-                                            },
-                                            tooltip: {},
-                                            legend: {
-                                                data: ['sales']
-                                            },
-                                            xAxis: {
-                                                data: ['2022', '2023', '계획', '추정', '실적', '2024']
-                                            },
-                                            yAxis: {},
-                                            series: [
-                                            {
-                                                data: [10, 22, 28, 43, 49],
-                                                type: 'bar',
-                                                stack: 'x'
-                                                },
-                                                {
-                                                data: [5, 4, 3, 5, 10],
-                                                type: 'bar',
-                                                stack: 'x'
-                                                },
-                                                {
-                                                data: [3, 4, 3, 5, 8],
-                                                type: 'bar',
-                                                stack: 'x'
-                                                },
-                                                {
-                                                data: [1, 1, 1, 5, 1],
-                                                type: 'bar',
-                                                stack: 'x'
-                                                }
-                                            ]
-                                            };
+                                                        ],
+                                                    title: {
+                                                        text: 'ECharts Example'
+                                                    },
+                                                    tooltip: {},
+                                                    legend: {
+                                                        data: ['sales']
+                                                    },
+                                                    xAxis: {
+                                                        data: ['2022', '2023', '계획', '추정', '실적', '2024']
+                                                    },
+                                                    yAxis: {},
+                                                    series: [
+                                                    {
+                                                        data: [10, 22, 28, 43, 49],
+                                                        type: 'bar',
+                                                        stack: 'x'
+                                                        },
+                                                        {
+                                                        data: [5, 4, 3, 5, 10],
+                                                        type: 'bar',
+                                                        stack: 'x'
+                                                        },
+                                                        {
+                                                        data: [3, 4, 3, 5, 8],
+                                                        type: 'bar',
+                                                        stack: 'x'
+                                                        },
+                                                        {
+                                                        data: [1, 1, 1, 5, 1],
+                                                        type: 'bar',
+                                                        stack: 'x'
+                                                        }
+                                                    ]
+                                                    };
 
-                                            if (option && typeof option === 'object') {
-                                            myChart.setOption(option);
-                                            }
+                                                    if (option && typeof option === 'object') {
+                                                    myChart.setOption(option);
+                                                    }
 
-                                            window.addEventListener('resize', myChart.resize);
-                                        </script>
+                                                    window.addEventListener('resize', myChart.resize);
+                                                </script>
                                         </div>
                                     </div>
                                 </div>
@@ -321,49 +321,41 @@
                                                     국가별 매출 증감현황
                                                 </h5>
                                                 <div class=" d-flex align-items-center justify-content-center mt-2 mb-5">
-                                                    <div id="container22" style="height: 250px"></div>
 
-                                                    <script type="text/javascript">
-                                                        var dom = document.getElementById('container22');
-                                                        var myChart = echarts.init(dom, 'dark', {
-                                                          renderer: 'canvas',
-                                                          useDirtyRect: false
-                                                        });
-                                                        var app = {};
+                                                       <div id="chart1" style="width: 600px; height: 400px;"></div>
 
-                                                        var option;
+                                                </div>
+                                                <div class="card bg-dark m-0">
+                                                    <div class="card-body ">
+                                                        <div class="d-sm-flex d-block align-items-center justify-content-between mb-3">
+                                                            <div class="mb-3 mb-sm-0">
+                                                                <h5 class="card-title fw-semibold">브랜드 매출 증감현황</h5>
+                                                            </div>
+                                                            <div class="badge text-bg-success fs-3 rounded-4 py-2 px-4">
+                                                                한국
+                                                            </div>
+                                                        </div>
+                                                        <div class=" d-flex align-items-center justify-content-center mt-2">
+                                                              <!-- 첫 번째 차트를 그릴 div -->
 
-                                                        option = {
-                                                      xAxis: {
-                                                        type: "category",
-                                                        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-                                                      },
-                                                      yAxis: {},
-                                                      series: [{
-                                                        data: [820, 932, 901, 934, 1290, 1330, 1320],
-                                                        type: "line"
-                                                      }]
-                                                    }
+                                                            <!-- 두 번째 차트를 그릴 div -->
+                                                            <div id="chart2" style="width: 600px; height: 400px;"></div>
 
-                                                        if (option && typeof option === 'object') {
-                                                          myChart.setOption(option);
-                                                        }
+                                                            <script>
 
-                                                        window.addEventListener('resize', myChart.resize);
-                                                      </script>
 
-                                                    <!--  <div id="chart-container"></div>
-                                                    <script type="text/javascript">
-                                                     var dom = document.getElementById('chart-container3');
-                                                        var myChart = echarts.init(dom, null, {
-                                                                        renderer: 'canvas',
-                                                                        useDirtyRect: false
-                                                                        });
-                                                                        var app = {};
+                                                                // 두 번째 차트 데이터
+                                                                var data2 = {
+                                                                    // 데이터 설정
+                                                                    // 예: x축과 y축 데이터
+                                                                    xAxisData: ['X', 'Y', 'Z', 'W', 'V'],
+                                                                    seriesData: [5, 15, 10, 20, 25]
+                                                                };
 
-                                                                        var option;
+                                                                // 첫 번째 차트 생성
+                                                                var chart1 = echarts.init(document.getElementById('chart1'));
 
-                                                                        option = {
+                                                                        option1 = {
                                                                         title: {
                                                                             text: 'Accumulated Waterfall Chart'
                                                                         },
@@ -420,7 +412,7 @@
                                                                                 color: 'transparent'
                                                                                 }
                                                                             },
-                                                                            data: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
+                                                                            data1: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
                                                                             },
                                                                             {
                                                                             name: 'Income',
@@ -444,49 +436,24 @@
                                                                             }
                                                                         ]
                                                                         };
+                                                                chart1.setOption(option1);
 
-                                                                        if (option && typeof option === 'object') {
-                                                                        myChart.setOption(option);
-                                                                        }
-
-                                                                        window.addEventListener('resize', myChart.resize);
-                                                                 </script>-->
-                                                </div>
-                                                <div class="card bg-dark m-0">
-                                                    <div class="card-body ">
-                                                        <div class="d-sm-flex d-block align-items-center justify-content-between mb-3">
-                                                            <div class="mb-3 mb-sm-0">
-                                                                <h5 class="card-title fw-semibold">브랜드 매출 증감현황</h5>
-                                                            </div>
-                                                            <div class="badge text-bg-success fs-3 rounded-4 py-2 px-4">
-                                                                한국
-                                                            </div>
-                                                        </div>
-                                                        <div class=" d-flex align-items-center justify-content-center mt-2">
-                                                            <div id="chart-container2" style="height:250px"></div>
-                                                            <script type="text/javascript">
-                                                            import * as echarts from 'echarts';
-
-                                                                var chartDom = document.getElementById('chart-container2');
-                                                                var myChart = echarts.init(chartDom, 'dark');
-                                                                var option;
-
-                                                                option = {
-                                                                xAxis: {
-                                                                    type: 'category',
-                                                                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                                                                },
-                                                                yAxis: {},
-                                                                series: [
-                                                                    {
-                                                                    data: [820, 932, 901, 934, 1290, 1330, 1320],
-                                                                    type: 'line'
-                                                                    }
-                                                                ]
+                                                                // 두 번째 차트 생성
+                                                                var chart2 = echarts.init(document.getElementById('chart2'));
+                                                                var option2 = {
+                                                                    title: {
+                                                                        text: '두 번째 차트'
+                                                                    },
+                                                                    xAxis: {
+                                                                        data: data2.xAxisData
+                                                                    },
+                                                                    yAxis: {},
+                                                                    series: [{
+                                                                        type: 'line',
+                                                                        data: data2.seriesData
+                                                                    }]
                                                                 };
-
-                                                                option && myChart.setOption(option);
-
+                                                                chart2.setOption(option2);
                                                             </script>
                                                         </div>
                                                     </div>

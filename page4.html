@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    dir="ltr"
+    data-bs-theme="dark"
+    data-color-theme="Blue_Theme"
+    data-layout="vertical">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Favicon icon-->
+        <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png"/>
+
+        <!-- Core Css -->
+        <link rel="stylesheet" href="../assets/css/styles.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/scichart@3.2.538/index.min.js" crossorigin="anonymous"></script>
+
+        <title>삼양식품</title>
+        <style>
+            #scichart-root { height: calc(-320px + 100vh);
+                min-height: 600px; }
+                #scichart-root2 {   min-height: 320px;width:100% }
+                #scichart-root4 {   min-height: 300px;width:100% }
+                #scichart-root3 {  height: 350px; position: relative; }
+.titleWrapper { position: absolute; width: 100%; top: 35%; text-align: center; pointer-events: none; color: #ffffff77; z-index: 22; }
+.title { font-size: 20px; }
+.subTitle {  font-size: 16px; }
+#debug-camera { pointer-events: none; position: absolute; left: 50px; top: 150px; color: #FFFFFF; background: #00000077; padding: 10px; font-size: 13px }
+            </style>
+    </head>
+    <body>
+        <div id="main-wrapper">
+            <!-- Sidebar Start -->
+            <aside class="left-sidebar with-vertical">
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="../dark/index.html" class="text-nowrap logo-img">
+                        <img
+                            src="../assets/images/logos/dark-logo.svg"
+                            class="dark-logo"
+                            alt="Logo-Dark"/>
+
+                    </a>
+                    <a
+                        href="javascript:void(0)"
+                        class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
+                        <i class="ti ti-x"></i>
+                    </a>
+                </div>
+
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar="data-simplebar">
+                    <ul id="sidebarnav">
+                        <!-- ---------------------------------- -->
+                        <!-- Home -->
+                        <!-- ---------------------------------- -->
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Home</span>
+                        </li>
+                        <!-- ---------------------------------- -->
+                        <!-- Dashboard -->
+                        <!-- ---------------------------------- -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link " href="page2.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-activity-heartbeat"></i>
+                                </span>
+                                <span class="hide-menu">매출현황</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page3.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-shopping-cart"></i>
+                                </span>
+                                <span class="hide-menu">영업이익 현황</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item selected">
+                            <a class="sidebar-link" href="page4.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-file-analytics"></i>
+                                </span>
+                                <span class="hide-menu">A 라인 생산 현황</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page5.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-file-analytics"></i>
+                                </span>
+                                <span class="hide-menu">B 라인 생산 현황</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page6.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-chart-line"></i>
+                                </span>
+                                <span class="hide-menu">매출 증감 요인 분석</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page7.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-chart-treemap"></i>
+                                </span>
+                                <span class="hide-menu">조직별 판매실적</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page8.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-chart-infographic"></i>
+                                </span>
+                                <span class="hide-menu">조직별 비용 사용 현황</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page9.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-file-chart"></i>
+                                </span>
+                                <span class="hide-menu">영업이익 중감요인 분석</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="fixed-profile p-3 mx-4 mb-2 bg-secondary-subtle rounded mt-3">
+                    <div class="hstack gap-3">
+                        <div class="john-img">
+                            <img
+                                src="../assets/images/profile/user-1.jpg"
+                                class="rounded-circle"
+                                width="40"
+                                height="40"
+                                alt=""/>
+                        </div>
+                        <div class="john-title">
+                            <h6 class="mb-0 fs-4 fw-semibold">홍길동</h6>
+                            <span class="fs-2">최고 경영자</span>
+                        </div>
+                        <button
+                            class="border-0 bg-transparent text-primary ms-auto"
+                            tabindex="0"
+                            type="button"
+                            aria-label="logout"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="logout">
+                            <i class="ti ti-power fs-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+            <!-- Sidebar End -->
+            <div class="page-wrapper">
+                <!-- Header Start -->
+                <header class="topbar">
+                    <div class="with-vertical">
+                        <nav class="navbar navbar-expand-lg p-0">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link sidebartoggler nav-icon-hover ms-n3"
+                                        id="headerCollapse"
+                                        href="javascript:void(0)">
+                                        <i class="ti ti-menu-2"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="navbar-nav quick-links d-none d-lg-flex">
+                                <h2>
+                                    A 라인 생산 실적
+                                    <span
+                                        class="mb-1 badge rounded-pill font-medium bg-warning-subtle text-warning">계획/실적</span></h2>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <!-- Header End -->
+
+                <div class="body-wrapper">
+                    <div class="top-head bg-primary-subtle">
+                        <div class="w-100  ">
+                            <form class="d-flex gap-3 p-2 ">
+                                <select class="form-select  w-20" id="inlineFormCustomSelect">
+                                    <option selected="">경영계획 Ver</option>
+                                    <option value="1">2024년 1분기 경영계획 Ver3-1</option>
+                                </select>
+                                <select class="form-select w-20" id="inlineFormCustomSelectPref">
+                                    <option selected="">추정계획 Ver</option>
+                                    <option value="1">2024년 1분기 추정계획 Ver.01</option>
+                                </select>
+                                <div class="input w-20">
+                                    <label class="sr-only"></label>
+                                    <input type="date" class="form-control" id="inlineFormInput" placeholder="date">
+                                </div>
+                                <select class="form-select w-20" id="inlineFormCustomSelectPref">
+                                    <option selected="">증감 분석 :추정 vs 실적
+                                    </option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Row 1 -->
+                        <div>
+                            <form class="d-flex align-items-center gap-3 m-3">
+                                <div class="d-flex align-items-center">
+                                    <label class="d-block text-nowrap me-3">Capa 기준</label>
+                                    <select class="form-select" id="inlineFormCustomSelectPref">
+                                        <option selected="">설계 Capa</option>
+                                        <option value="1">OEE</option>
+                                    </select>
+                                </div>
+                                <div
+                                    class="btn-group me-1"
+                                    role="group"
+                                    aria-label="Basic radio toggle button group">
+                                    <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="btnradio"
+                                        id="btnradio1"
+                                        checked="checked">
+                                    <label class="btn btn-outline-primary" for="btnradio1">PH2 별</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+                                    <label class="btn btn-outline-primary" for="btnradio3">라인별</label>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="row">
+                            <!-- Weekly Stats -->
+                            <div class="col-sm-4">
+                                <div class="card  d-flex align-items-strech">
+                                    <div class="card-body overflow-hidden">
+                                        <h5 class="card-title fw-semibold">Weekly Stats</h5>
+                                        <p class="card-subtitle mb-0">Average sales</p>
+
+                                        <div class="position-relative map " >
+
+                                            <div id="scichart-root" ></div>
+  <script>
+
+let randomSeed = 0;
+function random() {
+  const x = Math.sin(randomSeed++) * 10000;
+  return x - Math.floor(x);
+}
+
+// Function to return data for the fan chart
+function getVarianceData() {
+  const varianceData = [];
+  const startDate = 1546300800; // 1st Jan 2019
+  const dateStep = 1546387200 - startDate // one day;
+
+  const length = 10;
+  let yLast = 10;
+  for(let i = 0; i < length; i++) {
+    const date = startDate + dateStep * i;
+
+    const y = yLast + (random() - 0.48);
+    yLast = y;
+
+    let varMax = NaN;
+    let var4 = NaN;
+    let var3 = NaN;
+    let var2 = NaN;
+    let var1 = NaN;
+    let varMin = NaN;
+
+    if (i > 4) {
+      varMax = y + (i - 5) * 0.3;
+      var4 = y + (i - 5) * 0.2;
+      var3 = y + (i - 5) * 0.1;
+      var2 = y - (i - 5) * 0.1;
+      var1 = y - (i - 5) * 0.2;
+      varMin = y - (i - 5) * 0.3;
+    }
+
+    varianceData.push({date, actual: y, varMax, var4, var3, var2, var1, varMin});
+  }
+
+  return varianceData;
+}
+
+async function simpleFanChart(divElementId) {
+  // #region ExampleA
+  // Demonstrates how to create a fan chart using SciChart.js
+  const {
+    SciChartSurface,
+    NumericAxis,
+    FastLineRenderableSeries,
+    FastBandRenderableSeries,
+    XyDataSeries,
+    XyyDataSeries,
+    SciChartJsNavyTheme
+  } = SciChart;
+
+  // or, for npm, import { SciChartSurface, ... } from "scichart"
+
+  const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
+    theme: new SciChartJsNavyTheme()
+  });
+  sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+  sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+
+  // get data for the fan chart
+  // format is [{ date, actual, varMax, var4, var3, var2, var1, varMin }]
+  const varianceData = getVarianceData();
+  const xValues = varianceData.map(v => v.date);
+
+  // Add a line series with the Xy data (the actual data)
+  sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
+    dataSeries: new XyDataSeries(wasmContext, { xValues, yValues: varianceData.map(v => v.actual) }),
+    stroke: "#EC0F6C",
+  }));
+
+  // Add band series with progressively higher opacity for the fan variance data
+  sciChartSurface.renderableSeries.add(new FastBandRenderableSeries(wasmContext, {
+    dataSeries: new XyyDataSeries(wasmContext, { xValues, yValues: varianceData.map(v => v.varMin), y1Values: varianceData.map(v => v.varMax) }),
+    opacity: 0.15,
+    fill: "#EC0F6C",
+    strokeY1: "#00000000"
+  }));
+  sciChartSurface.renderableSeries.add(new FastBandRenderableSeries(wasmContext, {
+    dataSeries: new XyyDataSeries(wasmContext, { xValues, yValues: varianceData.map(v => v.var1), y1Values: varianceData.map(v => v.var4) }),
+    opacity: 0.33,
+    fill: "#EC0F6C",
+    strokeY1: "#00000000"
+  }));
+  sciChartSurface.renderableSeries.add(new FastBandRenderableSeries(wasmContext, {
+    dataSeries: new XyyDataSeries(wasmContext, { xValues, yValues: varianceData.map(v => v.var2), y1Values: varianceData.map(v => v.var3) }),
+    opacity: 0.5,
+    fill: "#EC0F6C",
+    strokeY1: "#00000000"
+  }));
+  // #endregion
+
+  // Optional: add zooming, panning for the example
+  const { MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier } = SciChart;
+  sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier(), new ZoomPanModifier, new ZoomExtentsModifier());
+};
+
+simpleFanChart("scichart-root");
+
+
+
+
+
+async function builderExample(divElementId) {
+  // #region ExampleB
+  // Demonstrates how to create a band chart with SciChart.js using the Builder API
+  const {
+    chartBuilder,
+    ESeriesType,
+    EThemeProviderType
+  } = SciChart;
+
+  // or, for npm, import { chartBuilder, ... } from "scichart"
+
+  // get data for the fan chart
+  // format is [{ date, actual, varMax, var4, var3, var2, var1, varMin }]
+  const varianceData = getVarianceData();
+
+  // Convert to arrays expected by scichart.js. There are more efficient ways to do this!
+  const xValues = varianceData.map(v => v.date);
+  const yValues = varianceData.map(v => v.actual);
+  const varMinValues = varianceData.map(v => v.varMin);
+  const varMaxValues = varianceData.map(v => v.varMax);
+  const var1Values = varianceData.map(v => v.var1);
+  const var2Values = varianceData.map(v => v.var2);
+  const var3Values = varianceData.map(v => v.var3);
+  const var4Values = varianceData.map(v => v.var4);
+
+  const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    surface: { theme: { type: EThemeProviderType.Dark } },
+    series: [
+      {
+        type: ESeriesType.LineSeries,
+        xyData: { xValues, yValues },
+        options: {
+          stroke: "#EC0F6C",
+        }
+      },
+      {
+        type: ESeriesType.BandSeries,
+        xyyData: { xValues, yValues: varMinValues, y1Values: varMaxValues },
+        options: {
+          opacity: 0.15,
+          fill: "#EC0F6C",
+          strokeY1: "#00000000"
+        }
+      },
+      {
+        type: ESeriesType.BandSeries,
+        xyyData: { xValues, yValues: var1Values, y1Values: var4Values },
+        options: {
+          opacity: 0.33,
+          fill: "#EC0F6C",
+          strokeY1: "#00000000"
+        }
+      },
+      {
+        type: ESeriesType.BandSeries,
+        xyyData: { xValues, yValues: var2Values, y1Values: var3Values },
+        options: {
+          opacity: 0.5,
+          fill: "#EC0F6C",
+          strokeY1: "#00000000"
+        }
+      }
+    ]
+  });
+  // #endregion
+};
+
+
+
+// Uncomment this to use the builder example
+//builderExample("scichart-root");
+
+
+
+  </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Top Performers -->
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class=" col-md-6">
+                                        <!-- Monthly Earnings -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="text-white text-bg-indigo rounded-2
+                            p-1 d-flex align-items-center justify-content-center">
+                                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                                    </div>
+                                                    <h5 class="card-title mx-2 fw-semibold">
+                                                        전체가동률
+                                                    </h5>
+                                                </div>
+
+                                                <div class=" d-flex align-items-center justify-content-center mt-2">
+                                                    <div id="scichart-root2" ></div>
+                                                    <script>
+                                                       // #region ExampleA
+                                                            const {
+                                                            CustomChartModifier2D,
+                                                            AxisMarkerAnnotation
+                                                            } = SciChart;
+
+                                                            // Example of a Custom ChartModifier to display Axis Marker annotations on the Y-Axis
+                                                            // showing the latest value of each series
+                                                            class SimpleSeriesValueModifier extends CustomChartModifier2D {
+                                                            constructor() {
+                                                            super();
+                                                            this.annotationsBySeries = new Map();
+                                                                this.lastYMode = "LastVisible"; // options are "Last" and "LastVisible"
+                                                            }
+
+                                                            // override onParentSurfaceRendered from the base class. Called when the chart redraws
+                                                            onParentSurfaceRendered() {
+                                                            super.onParentSurfaceRendered();
+
+                                                            // Manage annotation lifecycle
+                                                            if (this.parentSurface.renderableSeries.size() !== this.annotationsBySeries.size) {
+                                                                this.resetAllMarkers();
+                                                                this.createMarkers();
+                                                            }
+
+                                                            // Update annotation placement
+                                                            this.annotationsBySeries.forEach((series, annotation) => {
+                                                                const count  = series.dataSeries.count();
+                                                                if (count === 0) {
+                                                                annotation.isVisible = false;
+                                                                return;
+                                                                }
+
+                                                                const lastYSimpleMode = () => {
+                                                                    const lastYValue = series.dataSeries.getNativeYValues().get(count - 1);
+                                                                    annotation.y1 = lastYValue;
+                                                                    annotation.isVisible = true;
+                                                                };
+
+                                                                const lastYInViewportMode = () => {
+                                                                const wc = this.parentSurface.webAssemblyContext2D;
+                                                                const lastX = series.xAxis.visibleRange.max;
+                                                                const lastXIndex = wc.NumberUtil.FindIndex(series.dataSeries.getNativeXValues(), lastX, wc.SCRTFindIndexSearchMode.Nearest, series.dataSeries.dataDistributionCalculator.isSortedAscending);
+
+                                                                const lastY = series.dataSeries.getNativeYValues().get(lastXIndex);
+                                                                            // console.log(`debug: ${lastX}, ${series.dataSeries.getNativeXValues().get(count - 1)}`);
+                                                                annotation.y1 = lastY;
+                                                                annotation.isVisible = true;
+                                                                annotation.opacity = lastX >= series.dataSeries.getNativeXValues().get(count - 1) ? 1.0 : 0.5;
+                                                                };
+
+                                                                // Two possible modes: "Last" and "LastVisible"
+                                                                // One places the AxisMarkerAnnotation at last y-value in the series
+                                                                // The other at last y-value in the viewport
+                                                                if (this.lastYMode === "LastVisible")
+                                                                lastYInViewportMode();
+                                                                else
+                                                                lastYSimpleMode();
+
+                                                                });
+                                                            }
+
+                                                            // override onDetach resetting the state
+                                                            onDetach() {
+                                                            super.onDetach();
+                                                            this.resetAllMarkers();
+                                                            }
+
+                                                            resetAllMarkers() {
+                                                            this.annotationsBySeries.forEach((series, annotation) => {
+                                                                this.parentSurface.annotations.remove(annotation);
+                                                                annotation.delete();
+                                                            });
+                                                            this.annotationsBySeries.clear();
+                                                            }
+
+                                                            createMarkers() {
+                                                            this.parentSurface.renderableSeries.asArray().forEach(series => {
+                                                                const annotation = new AxisMarkerAnnotation({
+                                                                // Axis marker fill
+                                                                backgroundColor: series.stroke,
+                                                                // Axis text color
+                                                                color: "White",
+                                                                // TODO: You could choose white or black for text depending on the color of the series
+                                                                // TODO: You could choose a different property from the series for different series types, e.g. candle, mountain, column
+                                                                });
+                                                                this.annotationsBySeries.set(annotation, series);
+                                                                this.parentSurface.annotations.add(annotation);
+                                                            });
+                                                            }
+                                                            }
+                                                            // #endregion
+
+                                                            async function customSeriesValueModifier(divElementId) {
+
+                                                            const {
+                                                            SciChartSurface,
+                                                            NumericAxis,
+                                                            FastLineRenderableSeries,
+                                                            XyDataSeries,
+                                                            SciChartJsNavyTheme,
+                                                            MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier
+                                                            } = SciChart;
+
+                                                            // or, for npm, import { SciChartSurface, ... } from "scichart"
+
+                                                            const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
+                                                            theme: new SciChartJsNavyTheme()
+                                                            });
+                                                            sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+                                                            sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+
+                                                            const xValues = [];
+                                                            const yValues = [];
+                                                            const yValues2 = [];
+                                                            for(let i = 0; i < 100; i++) {
+                                                            xValues.push(i);
+                                                            yValues.push(0.2 * Math.sin(i*0.1) - Math.cos(i * 0.01));
+                                                            yValues2.push(0.5 * Math.cos(i*0.11) - Math.sin(i * 0.015));
+                                                            }
+
+                                                            sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
+                                                            stroke: "#FF6600",
+                                                            strokeThickness: 5,
+                                                            dataSeries: new XyDataSeries(wasmContext, {
+                                                                xValues,
+                                                                yValues,
+                                                            })
+                                                            }));
+
+                                                            sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
+                                                            stroke: "#50C7E0",
+                                                            strokeThickness: 5,
+                                                            dataSeries: new XyDataSeries(wasmContext, {
+                                                                xValues,
+                                                                yValues: yValues2,
+                                                            })
+                                                            }));
+
+                                                            // Add zooming, panning for the example
+                                                            sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier(), new ZoomPanModifier, new ZoomExtentsModifier());
+
+                                                            // #region ExampleB
+                                                            // Add the custom modifier to the chart
+                                                            sciChartSurface.chartModifiers.add(new SimpleSeriesValueModifier());
+                                                            // #endregion
+                                                            };
+
+                                                            customSeriesValueModifier("scichart-root2");
+                                                                                                                </script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-6">
+                                        <!-- 3 -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="text-white text-bg-warning rounded-2
+                      p-1 d-flex align-items-center justify-content-center">
+                                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                                    </div>
+                                                    <h5 class="card-title mx-2 fw-semibold">
+                                                        총 생산량(kg)
+                                                    </h5>
+                                                        <h4 class="fw-semibold my-3  text-center">320t</h4>
+                                                        <div class="hstack p-2 border rounded justify-content-between mx-3 ">
+                                                            <h6 class="mb-0 fs-3 ">
+                                                                <span class="p-2">계획 :
+                                                                </span>350T</h6>
+                                                            <div class="ms-3 bg-success-subtle text-success badge">
+                                                                <span class="fs-2">46%</span>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                <div class="row align-items-center">
+
+                                                    <div class="col-12">
+                                                        <div class="d-flex justify-content-center">
+                                                            <div class="bg-body rounded" style="min-height: 128.7px;">
+                                                                <div id="scichart-root4" ></div>
+                                                                <script>
+
+                                                                        async function simplePieChart(divElementId) {
+                                                                        // #region ExampleA
+                                                                        // Demonstrates how to create a pie chart with SciChart.js
+                                                                        const {
+                                                                            SciChartPieSurface,
+                                                                            EPieType,
+                                                                            SciChartJsNavyTheme,
+                                                                            PieSegment,
+                                                                            ELegendPlacement,
+                                                                            ELegendOrientation,
+                                                                            GradientParams,
+                                                                            Point
+                                                                        } = SciChart;
+
+                                                                        // or, for npm, import { SciChartPieSurface, ... } from "scichart"
+
+                                                                        // Create the pie chart
+                                                                        const sciChartPieSurface = await SciChartPieSurface.create(divElementId, {
+                                                                            theme: new SciChartJsNavyTheme(),
+                                                                            pieType: EPieType.Pie,
+                                                                            animate: true,
+                                                                        });
+
+                                                                        // Additional legend options
+                                                                        sciChartPieSurface.legend.showLegend = true;
+                                                                        sciChartPieSurface.legend.showCheckboxes = true;
+                                                                        sciChartPieSurface.legend.animate = true;
+                                                                        sciChartPieSurface.legend.placement = ELegendPlacement.TopRight;
+                                                                        sciChartPieSurface.legend.orientation = ELegendOrientation.Vertical;
+
+                                                                        // Create pie segments with value, colour and text
+                                                                        const pieSegment1 = new PieSegment({
+                                                                            color: "#228B22",
+                                                                            value: 40,
+                                                                            text: "Green",
+                                                                            colorLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+                                                                            { color: "#1D976C", offset: 0 },
+                                                                            { color: "#93F9B9", offset: 1 },
+                                                                            ]),
+                                                                        });
+                                                                        const pieSegment2 = new PieSegment({
+                                                                            value: 10,
+                                                                            text: "Red",
+                                                                            colorLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+                                                                            { color: "#DD5E89", offset: 0 },
+                                                                            { color: "#F7BB97", offset: 1 },
+                                                                            ]),
+                                                                        });
+                                                                        const pieSegment3 = new PieSegment({
+                                                                            value: 20,
+                                                                            text: "Blue",
+                                                                            colorLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+                                                                            { color: "#1FA2FF", offset: 0 },
+                                                                            { color: "#12D8FA", offset: 0.5 },
+                                                                            { color: "#A6FFCB", offset: 1 },
+                                                                            ]),
+                                                                        });
+                                                                        const pieSegment4 = new PieSegment({
+                                                                            value: 15,
+                                                                            text: "Yellow",
+                                                                            colorLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+                                                                            { color: "#F09819", offset: 0 },
+                                                                            { color: "#EDDE5D", offset: 1 },
+                                                                            ]),
+                                                                        });
+                                                                        sciChartPieSurface.pieSegments.add(pieSegment1, pieSegment2, pieSegment3, pieSegment4);
+                                                                        // #endregion
+                                                                        };
+
+                                                                        simplePieChart("scichart-root4");
+
+
+
+
+
+                                                                        async function builderExample(divElementId) {
+                                                                        // #region ExampleB
+                                                                        // Demonstrates how to create a pie chart with SciChart.js using the Builder API
+                                                                        const {
+                                                                            chartBuilder,
+                                                                            ESciChartSurfaceType,
+                                                                            ESeriesType,
+                                                                            EThemeProviderType
+                                                                        } = SciChart;
+
+                                                                        // or, for npm, import { chartBuilder, ... } from "scichart"
+
+                                                                        const sciChartPieChart = await chartBuilder.buildChart(divElementId, {
+                                                                            type: ESciChartSurfaceType.Pie2D,
+                                                                            options: {
+                                                                            surface: { theme: { type: EThemeProviderType.Dark } },
+                                                                            segments: [
+                                                                                { text: "This", value: 10, color: "red" },
+                                                                                { text: "That", value: 5, color: "blue" },
+                                                                                { text: "Other", value: 7, color: "green" }
+                                                                            ]
+                                                                            }
+                                                                        });
+
+                                                                        // Alternative API
+                                                                        const pieChart = await chartBuilder.buildPieChart(divElementId, {
+                                                                            surface: { theme: { type: EThemeProviderType.Dark } },
+                                                                            segments: [
+                                                                            { text: "This", value: 10, color: "red" },
+                                                                            { text: "That", value: 5, color: "blue" },
+                                                                            { text: "Other", value: 7, color: "green" }
+                                                                            ]
+                                                                        });
+                                                                        // #endregion
+                                                                        };
+
+                                                                </script>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-12">
+                                        <!-- Yearly Breakup -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="text-white text-bg-success rounded-2  p-1 d-flex align-items-center justify-content-center">
+                                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                                    </div>
+                                                    <h5 class="card-title mx-2 fw-semibold">
+                                                        계획 比
+                                                    </h5>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-12">
+                                                            <div class="titleWrapper">
+                                                                <p class="title"> 3D Chart Example</p>
+                                                            </div>
+
+
+                                                        <div class="d-flex justify-content-center">
+                                                            <div class="bg-body rounded" style="min-height: 128.7px;">
+                                                                <div id="scichart-root3" ></div>
+
+
+                                                                <div id="debug-camera">
+                                                                    <!-- Debug output from camera will be put here -->
+                                                                </div>
+
+                                                                <script>
+                                                                    async function pinchZoom3D(divElementId) {
+                                                                        const {
+                                                                            SciChart3DSurface,
+                                                                            NumericAxis3D,
+                                                                            Vector3,
+                                                                            SciChartJsNavyTheme,
+                                                                        } = SciChart;
+
+                                                                        // or, for npm, import { SciChart3DSurface, ... } from "scichart"
+
+                                                                        // Create a SciChart3DSurface in the host <div id=".." />
+                                                                        const { wasmContext, sciChart3DSurface } = await SciChart3DSurface.create(divElementId, {
+                                                                            // Optional theme
+                                                                            theme: new SciChartJsNavyTheme(),
+                                                                            // Optional dimensions of the axis cube (X,Y,Z) in World coordinates
+                                                                            worldDimensions: new Vector3(300, 200, 300),
+                                                                            // Optional initial camera position and target
+                                                                            cameraOptions: {
+                                                                            position: new Vector3(-300, 300, -300),
+                                                                            target: new Vector3(0, 50, 0),
+                                                                            }
+                                                                        });
+
+                                                                        // SciChart.js 3D supports only a single x,y,z axis. Declare your axis like this
+                                                                        sciChart3DSurface.xAxis = new NumericAxis3D(wasmContext, { axisTitle: "X Axis" });
+                                                                        sciChart3DSurface.yAxis = new NumericAxis3D(wasmContext, { axisTitle: "Y Axis" })
+                                                                        sciChart3DSurface.zAxis = new NumericAxis3D(wasmContext, { axisTitle: "Z Axis" });
+
+                                                                        const camera = sciChart3DSurface.camera;
+
+                                                                        // propertyChanged is raised each time any property changes on the camera
+                                                                        camera.propertyChanged.subscribe((args) => {
+                                                                            // Log current properties to console. debugOutput returns array of strings
+                                                                            const cameraDebug = camera.debugOutput();
+
+                                                                            // Output the same information to a div on the page
+                                                                            document.getElementById("debug-camera").innerHTML = cameraDebug.map(line => `<p>${line}</p>`).join("");
+                                                                        });
+                                                                        camera.target = new Vector3(0, 60, 0);
+
+                                                                        // #region ExampleA
+                                                                        const { OrbitModifier3D, PinchZoomModifier3D, MouseWheelZoomModifier3D, ResetCamera3DModifier } = SciChart;
+
+                                                                        // or for npm: import { OrbitModifier3D, ... } from "scichart"
+
+                                                                        // Add multiple behaviours including pinch-zoom to the chart
+                                                                        sciChart3DSurface.chartModifiers.add(
+                                                                            new PinchZoomModifier3D(),
+                                                                            new OrbitModifier3D(),
+                                                                            new MouseWheelZoomModifier3D(),
+                                                                            new ResetCamera3DModifier()
+                                                                        );
+                                                                        // #endregion
+                                                                        };
+
+                                                                        pinchZoom3D("scichart-root3");
+
+
+
+                                                                </script>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card w-100">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table align-middle mb-0">
+                                                <thead>
+                                                    <tr class=" fw-semibold text-center">
+                                                        <th scope="col" rowspan="2">라인</th>
+                                                        <th scope="col" rowspan="2">설계 Capa</th>
+                                                        <th scope="col" rowspan="2">생산품</th>
+                                                        <th scope="col" colspan="2">추정</th>
+                                                        <th scope="col" colspan="2">실적</th>
+                                                        <th scope="col" colspan="2">증감</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">생산량</th>
+                                                        <th scope="col">가동률</th>
+                                                        <th scope="col">생산량</th>
+                                                        <th scope="col">가동률</th>
+                                                        <th scope="col">생산량</th>
+                                                        <th scope="col">가동률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="border-top">
+                                                    <tr>
+                                                        <td class="">원주 면생산 1호기
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주 면생산 1호기
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주 면생산 54호기
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주 소스생산 소스라인(Bulk)
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-danger-subtle text-danger rounded">
+                                                                -888%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주 스낵생산 홍플러스사토밥라인
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭소스(6입)/2KG*6/BOX 외 1종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주장유생산 자동소물 포장실(KG)
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function handleColorTheme(e) {
+                        $("html").attr("data-color-theme", e);
+                        $(e).prop("checked", !0);
+                    }
+                </script>
+
+            </div>
+
+        </div>
+
+        <!-- Import Js Files -->
+
+        <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="../assets/js/app.min.js"></script>
+        <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+        <script src="../assets/js/sidebarmenu.js"></script>
+
+    </body>
+</html>

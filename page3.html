@@ -33,6 +33,7 @@
         font-family:sans-serif;
     }
     #scichart-root{    height:120px;}
+    #scichart-root33{ width:100%; height:320px}
 </style>
         <title>삼양식품</title>
     </head>
@@ -300,7 +301,68 @@
                                                     국가별 이익 증감현황
                                                 </h5>
                                                 <div class=" d-flex align-items-center justify-content-center mt-2 mb-5">
-                                                    <img src="../assets/images/page2_chart2.svg"/>
+                                                    <div id="scichart-root33"></div>
+                                                    <script>
+                                                        const {
+                                                            SciChartSurface,
+                                                            NumericAxis,
+                                                            EAxisAlignment,
+                                                            CursorModifier,
+                                                            FastErrorBarsRenderableSeries,
+                                                            HlcDataSeries,
+                                                            EllipsePointMarker,
+                                                            EErrorDirection,
+                                                            EDataPointWidthMode,
+                                                            NumberRange,
+                                                            SciChartJsNavyTheme,
+                                                            WaveAnimation
+                                                        } = SciChart;
+
+                                                        const initSciChart = async () => {
+                                                        const { wasmContext, sciChartSurface } = await SciChartSurface.create("scichart-root33", {
+                                                        theme: new SciChartJsNavyTheme()
+                                                        });
+
+                                                        sciChartSurface.xAxes.add(new NumericAxis(wasmContext, {
+                                                            axisTitle: "X Axis",
+                                                        }));
+                                                        sciChartSurface.yAxes.add(new NumericAxis(wasmContext, {
+                                                            axisTitle: "Y Axis",
+                                                            axisAlignment: EAxisAlignment.Left,
+                                                            growBy: new NumberRange(0.1, 0.1)
+                                                        }));
+
+                                                        const xValues = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+                                                        const yValues = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+                                                        const lowValues = [-0.5, -2, -1, -0.25, -2, -1.75, -0.2, -0.1, -2];
+                                                        const highValues = [0.4, 1.2, 2.1, 3.0, 4.7, 1.7, 6.5, 7.3, 8.9];
+                                                        const dataSeries = new HlcDataSeries(wasmContext, {
+                                                            xValues,
+                                                            yValues,
+                                                            highValues,
+                                                            lowValues
+                                                        });
+
+                                                        const errorBarsSeries = new FastErrorBarsRenderableSeries(wasmContext, {
+                                                            dataSeries,
+                                                            errorDirection: EErrorDirection.Horizontal,
+                                                            strokeThickness: 10,
+                                                            drawWhiskers: false,
+                                                            pointMarker: new EllipsePointMarker(wasmContext, {
+                                                                width: 10,
+                                                                height: 10,
+                                                                fill: "SteelBlue",
+                                                                stroke: "LightSteelBlue"
+                                                            }),
+                                                            animation: new WaveAnimation({ duration: 800 }),
+                                                        });
+                                                        sciChartSurface.renderableSeries.add(errorBarsSeries);
+
+                                                        sciChartSurface.zoomExtents();
+                                                        }
+
+                                                        initSciChart();
+                                                    </script>
                                                 </div>
 
                                                 <div class="card bg-dark mt-1 m-0">
