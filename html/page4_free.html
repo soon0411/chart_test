@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    dir="ltr"
+    data-bs-theme="dark"
+    data-color-theme="Blue_Theme"
+    data-layout="vertical">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Favicon icon-->
+        <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png"/>
+
+        <!-- Core Css -->
+        <link rel="stylesheet" href="../assets/css/styles.css"/>
+        <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  <script src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        <title>삼양식품</title>
+<style>
+#chart-container {width:100%; height:280px}
+#chart-container1, #chart-container2{height:500px;width:100%;}
+
+
+.tooltip-design{
+  width:140px;
+  white-space:nowrap;
+  background-color:#000000;
+  border-radius: 9px;
+  font-Family: 'NanumSquareNeo-Variable';
+  font-size: 8px;
+/*   overflow:hidden; */
+}
+.tooltip-design.wide{
+  width:180px;
+
+}
+
+.tooltip-design .row{
+  color: #fff;
+  display: flex;
+  height: 28px;
+  padding: 0px 8px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-top:1px solid #2D2D2D;
+}
+
+.tooltip-design div:first-child{
+  border:none;
+  color:#5AFC60 !important;
+}
+
+.tooltip-design div span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-break:break-all;
+  overflow:hidden;
+
+}
+</style>
+    </head>
+    <body>
+        <div id="main-wrapper">
+            <!-- Sidebar Start -->
+            <aside class="left-sidebar with-vertical">
+                <!-- ---------------------------------- -->
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="../dark/index.html" class="text-nowrap logo-img">
+                        <img
+                            src="../assets/images/logos/dark-logo.svg"
+                            class="dark-logo"
+                            alt="Logo-Dark"/>
+
+                    </a>
+                    <a
+                        href="javascript:void(0)"
+                        class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
+                        <i class="ti ti-x"></i>
+                    </a>
+                </div>
+
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar="data-simplebar">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">SciChart</span>
+                        </li>
+                       <li class="sidebar-item">
+                            <a class="sidebar-link " href="page2.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-activity-heartbeat"></i>
+                                </span>
+                                <span class="hide-menu">SciChart01</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page3.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-shopping-cart"></i>
+                                </span>
+                                <span class="hide-menu">SciChart02</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item ">
+                            <a class="sidebar-link" href="page4.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-file-analytics"></i>
+                                </span>
+                                <span class="hide-menu">SciChart03</span>
+                            </a>
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu"> Apache ECharts </span>
+                        </li>
+                         <li class="sidebar-item">
+                            <a class="sidebar-link " href="page2_free.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-activity-heartbeat"></i>
+                                </span>
+                                <span class="hide-menu"> Apache ECharts01</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page3_free.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-shopping-cart"></i>
+                                </span>
+                                <span class="hide-menu"> Apache ECharts02</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item ">
+                            <a class="sidebar-link" href="page4_free.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-file-analytics"></i>
+                                </span>
+                                <span class="hide-menu"> Apache ECharts 03</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="fixed-profile p-3 mx-4 mb-2 bg-secondary-subtle rounded mt-3">
+                    <div class="hstack gap-3">
+                        <div class="john-img">
+                            <img
+                                src="../assets/images/profile/user-1.jpg"
+                                class="rounded-circle"
+                                width="40"
+                                height="40"
+                                alt=""/>
+                        </div>
+                        <div class="john-title">
+                            <h6 class="mb-0 fs-4 fw-semibold">홍길동</h6>
+                            <span class="fs-2">최고 경영자</span>
+                        </div>
+                        <button
+                            class="border-0 bg-transparent text-primary ms-auto"
+                            tabindex="0"
+                            type="button"
+                            aria-label="logout"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="logout">
+                            <i class="ti ti-power fs-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+            <!-- Sidebar End -->
+            <div class="page-wrapper">
+                <!-- Header Start -->
+                <header class="topbar">
+                    <div class="with-vertical">
+                        <nav class="navbar navbar-expand-lg p-0">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link sidebartoggler nav-icon-hover ms-n3"
+                                        id="headerCollapse"
+                                        href="javascript:void(0)">
+                                        <i class="ti ti-menu-2"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="navbar-nav quick-links d-none d-lg-flex">
+                                <h2>
+                                    A 라인 생산 실적
+                                    <span
+                                        class="mb-1 badge rounded-pill font-medium bg-warning-subtle text-warning">계획/실적</span></h2>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <!-- Header End -->
+
+                <div class="body-wrapper">
+                    <div class="top-head bg-primary-subtle">
+                        <div class="w-100  ">
+                            <form class="d-flex gap-3 p-2 ">
+                                <select class="form-select  w-20" id="inlineFormCustomSelect">
+                                    <option selected="">경영계획 Ver</option>
+                                    <option value="1">2024년 1분기 경영계획 Ver3-1</option>
+                                </select>
+                                <select class="form-select w-20" id="inlineFormCustomSelectPref">
+                                    <option selected="">추정계획 Ver</option>
+                                    <option value="1">2024년 1분기 추정계획 Ver.01</option>
+                                </select>
+                                <div class="input w-20">
+                                    <label class="sr-only"></label>
+                                    <input type="date" class="form-control" id="inlineFormInput" placeholder="date">
+                                </div>
+                                <select class="form-select w-20" id="inlineFormCustomSelectPref">
+                                    <option selected="">증감 분석 :추정 vs 실적
+                                    </option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Row 1 -->
+                        <div>
+                            <form class="d-flex align-items-center gap-3 m-3">
+                                <div class="d-flex align-items-center">
+                                    <label class="d-block text-nowrap me-3">Capa 기준</label>
+                                    <select class="form-select" id="inlineFormCustomSelectPref">
+                                        <option selected="">설계 Capa</option>
+                                        <option value="1">OEE</option>
+                                    </select>
+                                </div>
+                                <div
+                                    class="btn-group me-1"
+                                    role="group"
+                                    aria-label="Basic radio toggle button group">
+                                    <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="btnradio"
+                                        id="btnradio1"
+                                        checked="checked">
+                                    <label class="btn btn-outline-primary" for="btnradio1">PH2 별</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+                                    <label class="btn btn-outline-primary" for="btnradio3">라인별</label>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="row">
+                            <!-- Weekly Stats -->
+                            <div class="col-sm-4">
+                                <div class="card  d-flex align-items-strech">
+                                    <div class="card-body overflow-hidden">
+                                        <h5 class="card-title fw-semibold">Weekly Stats</h5>
+                                        <p class="card-subtitle mb-0">Average sales</p>
+
+                                        <div class="position-relative map " >
+
+                                            <div id="chart-container" style="width:500px;height: calc(100vh - 320px);"></div>
+                                                        <script>
+                                                            var dom = document.getElementById('chart-container');
+                                                        var myChart = echarts.init(dom, null, {
+                                                        renderer: 'canvas',
+                                                        useDirtyRect: false
+                                                        });
+                                                        var app = {};
+
+                                                        var option;
+
+                                                        // 법인 매입 현황은 하나의 모비스법인을 선택해서 여러 나라에서 매입한 데이터를 시각화 .
+                                                        // 매입한 국가의 파이차트는 여러 공급업체의 데이터가 합쳐져 있다.
+                                                        // 예시 : ‘체코 > MAL’ 은  ‘포스코 체코, GS칼텍스 체코’ 에서 매입 하였다.
+
+                                                        // 국가별 경도와 위도 정보
+                                                        var countryCoords = {
+                                                        //업체 국가
+                                                        한국: [126.978, 37.5665],
+                                                        인도: [88.3674, 22.8671],
+                                                        중국: [113.26, 23.13],
+                                                        체코: [15.473, 49.8175],
+
+                                                        // 모비스 좌표
+                                                        MAL: [-86.4366, 32.3196]
+
+                                                        };
+
+                                                        // 국가별 파이 차트 데이터
+                                                        var countryPieData = {
+                                                        체코: { IP材: 100, 사출수지: 15, 도료: 20, 강재: 90, 부자재: 30 },
+                                                        인도: { IP材: 5, 사출수지: 15, 도료: 300, 강재: 90, 부자재: 30 },
+                                                        중국: { IP材: 200, 사출수지: 25, 도료: 35, 강재: 90, 부자재: 30 },
+                                                        한국: { IP材: 20, 사출수지: 25, 도료: 35, 강재: 90, 부자재: 3 }
+                                                        // 다른 국가들...
+                                                        };
+
+
+                                                        // 핀 아이콘 path
+                                                        var pinPath =
+                                                        'path://M12.5 20.9403C12.3051 20.9403 12.1102 20.9067 11.9154 20.8394C11.7205 20.7721 11.5442 20.6679 11.3865 20.5269C10.4891 19.7 9.64935 18.8484 8.8673 17.9721C8.08525 17.0958 7.40545 16.2199 6.82788 15.3442C6.25031 14.4686 5.79326 13.6006 5.45673 12.7404C5.12018 11.8801 4.9519 11.0493 4.9519 10.2481C4.9519 7.94038 5.69838 6.07213 7.19133 4.64328C8.68426 3.21443 10.4538 2.5 12.5 2.5C14.5461 2.5 16.3156 3.21443 17.8086 4.64328C19.3015 6.07213 20.048 7.94038 20.048 10.2481C20.048 11.0493 19.8797 11.8785 19.5432 12.7356C19.2066 13.5926 18.7512 14.4606 18.1768 15.3394C17.6025 16.2183 16.9243 17.0942 16.1422 17.9673C15.3602 18.8404 14.5204 19.6903 13.623 20.5173C13.4676 20.6583 13.291 20.7641 13.0933 20.8346C12.8955 20.9051 12.6977 20.9403 12.5 20.9403ZM12.5017 11.8654C12.9992 11.8654 13.4246 11.6882 13.7778 11.3339C14.131 10.9795 14.3076 10.5536 14.3076 10.056C14.3076 9.55839 14.1305 9.133 13.7761 8.7798C13.4218 8.4266 12.9958 8.25 12.4983 8.25C12.0007 8.25 11.5753 8.42717 11.2221 8.7815C10.8689 9.13583 10.6923 9.56179 10.6923 10.0594C10.6923 10.557 10.8694 10.9824 11.2238 11.3356C11.5781 11.6888 12.0041 11.8654 12.5017 11.8654Z';
+
+
+
+                                                        // 파이 차트 시리즈 생성 함수
+                                                        function createPieSeries(name, centerCoord) {
+                                                        var seriesData = [];
+                                                        for (var key in countryPieData[name]) {
+                                                            seriesData.push({
+                                                            name: key,
+                                                            value: countryPieData[name][key]
+                                                            });
+                                                        }
+                                                        return {
+                                                            type: 'pie',
+                                                            name: name,
+                                                            tooltip:{
+                                                            // show:true,
+                                                            trigger:'item',
+                                                            },
+                                                            coordinateSystem: 'geo',
+                                                            center: centerCoord,
+                                                            radius: 16,
+                                                            color: ['#329DFF', '#0033E7', '#45FFFF', '#FE89C8', '#B353FF'],
+                                                            itemStyle: {
+                                                            shadowBlur: 1,
+                                                            borderColor: 'rgba(0,0,0,0.2)',
+                                                            borderWidth: 0.2
+                                                            },
+                                                            labelLine: { show: false },
+                                                            label: {
+                                                            show: true,
+                                                            position: 'center',
+                                                            offset: [0, 30],
+                                                            fontSize: 15,
+                                                            fontWeight: 'bold',
+                                                            textBorderColor: '#ffffff',
+                                                            textBorderWidth: 3,
+                                                            formatter: '{a}'
+                                                            },
+                                                            data: seriesData
+                                                        };
+                                                        }
+
+                                                        // 시리즈 옵션 설정
+                                                        var seriesOption = [];
+                                                        for (var country in countryCoords) {
+                                                        if (country === 'MAL') {
+                                                            // 핀으로 표현
+                                                            seriesOption.push({
+                                                            type: 'scatter',
+                                                            name: country,
+                                                            coordinateSystem: 'geo',
+                                                            symbolKeepAspect: true,
+                                                            symbol: pinPath,
+                                                            symbolSize: 24,
+                                                            itemStyle: {
+                                                                color: '#FF6A00;',
+                                                                opacity: 1,
+                                                                borderColor: 'rgba(255,106,0,0.5)'
+                                                            },
+                                                            label: {
+                                                                show: true,
+                                                                opacity: 1,
+                                                                position: 'inside',
+                                                                offset: [0, 24],
+                                                                align: 'center',
+                                                                color: '#FF6A00',
+                                                                fontSize: 12,
+                                                                fontWeight: 'bold',
+                                                                textBorderColor: '#ffffff',
+                                                                textBorderWidth: 3,
+                                                                formatter: function (params) {
+                                                                return params.name; // 법인명 레이블로 표시
+                                                                }
+                                                            },
+                                                            data: [{ name: country, value: countryCoords[country].concat([100]) }]
+                                                            });
+                                                        } else if (countryPieData[country]) {
+                                                            // 파이 차트
+                                                            seriesOption.push(createPieSeries(country, countryCoords[country]));
+                                                        }
+
+                                                        // 업체 국가와 법인을 연결하는 라인 추가
+                                                        seriesOption.push({
+                                                            type: 'lines',
+                                                            z: 1,
+                                                            coordinateSystem: 'geo',
+
+                                                            effect: {
+                                                            show: false,
+                                                            loop: true,
+                                                            color: '#00f'
+                                                            },
+
+                                                            lineStyle: {
+                                                            normal: {
+                                                                color: 'rgba(0,0,0,0.01)',
+                                                                opacity: 1,
+                                                                width: 1.5,
+                                                                curveness: -0.3
+                                                            },
+                                                            emphasis: {
+                                                                color: '#32FF47',
+                                                                width: 2.5
+                                                            }
+                                                            },
+                                                            data: [
+                                                            {
+                                                                name: '인도 > MAL',
+                                                                coords: [countryCoords['인도'], countryCoords['MAL']]
+                                                            },
+
+                                                            {
+                                                                name: '중국 > MAL',
+                                                                coords: [countryCoords['중국'], countryCoords['MAL']]
+                                                            },
+
+                                                            {
+                                                                name: '한국 > MAL',
+                                                                coords: [countryCoords['한국'], countryCoords['MAL']]
+                                                            }
+                                                            ]
+                                                        });
+                                                        }
+
+                                                        var option = {
+                                                        backgroundColor: '#7c8fac',
+                                                        tooltip: {
+                                                            trigger: 'item',
+                                                                backgroundColor:'rgba{0,0,0,1}',
+                                                                borderWidth:0,
+                                                                padding:0,
+                                                                textStyle:{
+                                                                fontSize:10,
+                                                                },
+                                                            formatter: function (params) {
+                                                            if (params.seriesType === 'line') {
+                                                                var countries = params.data.name.split(' > ');
+                                                                var tooltipHtml = '<div class="tooltip-design"><div class="row"><span>' + params.data.name + '</span></div>';
+                                                                countries.forEach(function (country) {
+                                                                for (var item in countryPieData[country]) {
+                                                                    tooltipHtml += '<div class="row"><span>' + item + '</span><span>' + countryPieData[country][item] + '</span></div>';
+                                                                }
+                                                                });
+                                                                tooltipHtml += '</div>';
+                                                                return tooltipHtml;
+                                                            }
+                                                            }
+                                                        },
+
+                                                        geo: {
+                                                            map: 'world',
+                                                            roam: true,
+                                                            silent: true,
+                                                            itemStyle: {
+                                                            normal: {
+                                                                borderWidth: 0,
+                                                                color: '#fff'
+                                                            }
+                                                            }
+                                                        },
+                                                        series: seriesOption
+                                                        };
+
+
+                                                        if (option && typeof option === 'object') {
+                                                        myChart.setOption(option);
+                                                        }
+
+                                                        window.addEventListener('resize', myChart.resize);
+                                                        </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Top Performers -->
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class=" col-md-4">
+                                        <!-- Monthly Earnings -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="text-white text-bg-indigo rounded-2
+                            p-1 d-flex align-items-center justify-content-center">
+                                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                                    </div>
+                                                    <h5 class="card-title mx-2 fw-semibold">
+                                                        전체가동률
+                                                    </h5>
+                                                </div>
+
+                                                <div class=" d-flex align-items-center justify-content-center mt-2">
+                                                    <div id="chart-container2"></div>
+                                                    <script>
+                                                        var dom2 = document.getElementById('chart-container2');
+                                                        var myChart2 = echarts.init(dom2, null, {
+                                                        renderer: 'canvas',
+                                                        useDirtyRect: false
+                                                        });
+                                                        var app = {};
+
+                                                        var option;
+
+                                                        option2 = {
+                                                        color: ['#00AAAA', '#EEA616', '#415364'],
+                                                        tooltip: {
+                                                            trigger: 'item'
+                                                        },
+                                                        legend: {
+                                                            bottom: '0',
+                                                            left: 'center',
+                                                            color:'#fff'
+
+                                                        },
+                                                        series: [
+                                                            {
+                                                            type: 'pie',
+                                                            radius: ['40%', '70%'],
+                                                            avoidLabelOverlap: false,
+                                                            itemStyle: {
+                                                                borderRadius: 5,
+                                                                borderColor: '#000',
+                                                                borderWidth: 1
+                                                            },
+                                                            label: {
+                                                                show: false,
+                                                                position: 'center'
+                                                            },
+                                                            emphasis: {
+                                                                label: {
+                                                                show: true,
+                                                                fontSize: 40,
+                                                                fontWeight: 'bold',
+
+                                                                }
+                                                            },
+                                                            labelLine: {
+                                                                show: false
+                                                            },
+                                                            data: [
+                                                                { value: 1285, name: 'Scope 1' },
+                                                                { value: 1579, name: 'Scope 2' },
+                                                                { value: 14506, name: 'Scope 3' }
+                                                            ]
+                                                            }
+                                                        ]
+                                                        };
+
+                                                        if (option && typeof option === 'object') {
+                                                        myChart2.setOption(option2);
+                                                        }
+
+                                                        window.addEventListener('resize', myChart2.resize);
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-8">
+                                        <!-- 3 -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="text-white text-bg-warning rounded-2
+                      p-1 d-flex align-items-center justify-content-center">
+                                                        <i class="ti ti-currency-dollar fs-6"></i>
+                                                    </div>
+                                                    <h5 class="card-title mx-2 fw-semibold">
+                                                        총 생산량(kg)
+                                                    </h5>
+                                                        <h4 class="fw-semibold my-3  text-center">320t</h4>
+                                                        <div class="hstack p-2 border rounded justify-content-between mx-3 ">
+                                                            <h6 class="mb-0 fs-3 ">
+                                                                <span class="p-2">계획 :
+                                                                </span>350T</h6>
+                                                            <div class="ms-3 bg-success-subtle text-success badge">
+                                                                <span class="fs-2">46%</span>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                <div class="row align-items-center">
+
+                                                    <div class="col-12">
+                                                        <div class="d-flex justify-content-center">
+                                                            <div class="bg-body rounded" >
+                                                                <div id="chart-container3" style="width:600px;height:500px"></div>
+                                                                <script>
+                                                                var dom3 = document.getElementById('chart-container3');
+                                                                var myChart3 = echarts.init(dom3, null, {
+                                                                renderer: 'canvas',
+                                                                useDirtyRect: false
+                                                                });
+                                                                var app = {};
+
+                                                                var option;
+
+                                                                // prettier-ignore
+                                                                var hours = ['12a', '1a', '2a', '3a', '4a', '5a', '6a',
+                                                                    '7a', '8a', '9a', '10a', '11a',
+                                                                    '12p', '1p', '2p', '3p', '4p', '5p',
+                                                                    '6p', '7p', '8p', '9p', '10p', '11p'];
+                                                                // prettier-ignore
+                                                                var days = ['Saturday', 'Friday', 'Thursday',
+                                                                    'Wednesday', 'Tuesday', 'Monday', 'Sunday'];
+                                                                // prettier-ignore
+                                                                var data = [[0, 0, 5], [0, 1, 1], [0, 2, 0], [0, 3, 0], [0, 4, 0], [0, 5, 0], [0, 6, 0], [0, 7, 0], [0, 8, 0], [0, 9, 0], [0, 10, 0], [0, 11, 2], [0, 12, 4], [0, 13, 1], [0, 14, 1], [0, 15, 3], [0, 16, 4], [0, 17, 6], [0, 18, 4], [0, 19, 4], [0, 20, 3], [0, 21, 3], [0, 22, 2], [0, 23, 5], [1, 0, 7], [1, 1, 0], [1, 2, 0], [1, 3, 0], [1, 4, 0], [1, 5, 0], [1, 6, 0], [1, 7, 0], [1, 8, 0], [1, 9, 0], [1, 10, 5], [1, 11, 2], [1, 12, 2], [1, 13, 6], [1, 14, 9], [1, 15, 11], [1, 16, 6], [1, 17, 7], [1, 18, 8], [1, 19, 12], [1, 20, 5], [1, 21, 5], [1, 22, 7], [1, 23, 2], [2, 0, 1], [2, 1, 1], [2, 2, 0], [2, 3, 0], [2, 4, 0], [2, 5, 0], [2, 6, 0], [2, 7, 0], [2, 8, 0], [2, 9, 0], [2, 10, 3], [2, 11, 2], [2, 12, 1], [2, 13, 9], [2, 14, 8], [2, 15, 10], [2, 16, 6], [2, 17, 5], [2, 18, 5], [2, 19, 5], [2, 20, 7], [2, 21, 4], [2, 22, 2], [2, 23, 4], [3, 0, 7], [3, 1, 3], [3, 2, 0], [3, 3, 0], [3, 4, 0], [3, 5, 0], [3, 6, 0], [3, 7, 0], [3, 8, 1], [3, 9, 0], [3, 10, 5], [3, 11, 4], [3, 12, 7], [3, 13, 14], [3, 14, 13], [3, 15, 12], [3, 16, 9], [3, 17, 5], [3, 18, 5], [3, 19, 10], [3, 20, 6], [3, 21, 4], [3, 22, 4], [3, 23, 1], [4, 0, 1], [4, 1, 3], [4, 2, 0], [4, 3, 0], [4, 4, 0], [4, 5, 1], [4, 6, 0], [4, 7, 0], [4, 8, 0], [4, 9, 2], [4, 10, 4], [4, 11, 4], [4, 12, 2], [4, 13, 4], [4, 14, 4], [4, 15, 14], [4, 16, 12], [4, 17, 1], [4, 18, 8], [4, 19, 5], [4, 20, 3], [4, 21, 7], [4, 22, 3], [4, 23, 0], [5, 0, 2], [5, 1, 1], [5, 2, 0], [5, 3, 3], [5, 4, 0], [5, 5, 0], [5, 6, 0], [5, 7, 0], [5, 8, 2], [5, 9, 0], [5, 10, 4], [5, 11, 1], [5, 12, 5], [5, 13, 10], [5, 14, 5], [5, 15, 7], [5, 16, 11], [5, 17, 6], [5, 18, 0], [5, 19, 5], [5, 20, 3], [5, 21, 4], [5, 22, 2], [5, 23, 0], [6, 0, 1], [6, 1, 0], [6, 2, 0], [6, 3, 0], [6, 4, 0], [6, 5, 0], [6, 6, 0], [6, 7, 0], [6, 8, 0], [6, 9, 0], [6, 10, 1], [6, 11, 0], [6, 12, 2], [6, 13, 1], [6, 14, 3], [6, 15, 4], [6, 16, 0], [6, 17, 0], [6, 18, 0], [6, 19, 0], [6, 20, 1], [6, 21, 2], [6, 22, 2], [6, 23, 6]];
+                                                                option3 = {
+                                                                tooltip: {},
+                                                                visualMap: {
+                                                                    max: 20,
+                                                                    inRange: {
+                                                                    color: [
+                                                                        '#313695',
+                                                                        '#4575b4',
+                                                                        '#74add1',
+                                                                        '#abd9e9',
+                                                                        '#e0f3f8',
+                                                                        '#ffffbf',
+                                                                        '#fee090',
+                                                                        '#fdae61',
+                                                                        '#f46d43',
+                                                                        '#d73027',
+                                                                        '#a50026'
+                                                                    ]
+                                                                    }
+                                                                },
+                                                                xAxis3D: {
+                                                                    type: 'category',
+                                                                    data: hours
+                                                                },
+                                                                yAxis3D: {
+                                                                    type: 'category',
+                                                                    data: days
+                                                                },
+                                                                zAxis3D: {
+                                                                    type: 'value'
+                                                                },
+                                                                grid3D: {
+                                                                    boxWidth: 200,
+                                                                    boxDepth: 80,
+                                                                    light: {
+                                                                    main: {
+                                                                        intensity: 1.2
+                                                                    },
+                                                                    ambient: {
+                                                                        intensity: 0.3
+                                                                    }
+                                                                    }
+                                                                },
+                                                                series: [
+                                                                    {
+                                                                    type: 'bar3D',
+                                                                    data: data.map(function (item) {
+                                                                        return {
+                                                                        value: [item[1], item[0], item[2]]
+                                                                        };
+                                                                    }),
+                                                                    shading: 'color',
+                                                                    label: {
+                                                                        show: false,
+                                                                        fontSize: 16,
+                                                                        borderWidth: 1
+                                                                    },
+                                                                    itemStyle: {
+                                                                        opacity: 0.4
+                                                                    },
+                                                                    emphasis: {
+                                                                        label: {
+                                                                        fontSize: 20,
+                                                                        color: '#900'
+                                                                        },
+                                                                        itemStyle: {
+                                                                        color: '#900'
+                                                                        }
+                                                                    }
+                                                                    }
+                                                                ]
+                                                                };
+
+                                                                if (option && typeof option === 'object') {
+                                                                myChart3.setOption(option3);
+                                                                }
+
+                                                                window.addEventListener('resize', myChart3.resize);
+
+                                                                </script>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card w-100">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table align-middle mb-0">
+                                                <thead>
+                                                    <tr class=" fw-semibold text-center">
+                                                        <th scope="col" rowspan="2">라인</th>
+                                                        <th scope="col" rowspan="2">설계 Capa</th>
+                                                        <th scope="col" rowspan="2">생산품</th>
+                                                        <th scope="col" colspan="2">추정</th>
+                                                        <th scope="col" colspan="2">실적</th>
+                                                        <th scope="col" colspan="2">증감</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">생산량</th>
+                                                        <th scope="col">가동률</th>
+                                                        <th scope="col">생산량</th>
+                                                        <th scope="col">가동률</th>
+                                                        <th scope="col">생산량</th>
+                                                        <th scope="col">가동률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="border-top">
+                                                    <tr>
+                                                        <td class="">원주 면생산 1호기
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주 면생산 1호기
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주 면생산 54호기
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주 소스생산 소스라인(Bulk)
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-danger-subtle text-danger rounded">
+                                                                -888%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주 스낵생산 홍플러스사토밥라인
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭소스(6입)/2KG*6/BOX 외 1종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">원주장유생산 자동소물 포장실(KG)
+                                                        </td>
+                                                        <td>12백만
+                                                        </td>
+                                                        <td>불닭볶음면 18입 외 5종
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            11백만
+                                                        </td>
+                                                        <td class="text-nowrap">83.5%
+                                                        </td>
+                                                        <td class="text-nowrap">10백만
+                                                        </td>
+                                                        <td class="text-nowrap">
+                                                            <span class="badge fw-semibold p-1  bg-success-subtle text-success rounded">
+                                                                +8%P</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function handleColorTheme(e) {
+                        $("html").attr("data-color-theme", e);
+                        $(e).prop("checked", !0);
+                    }
+                </script>
+
+            </div>
+
+        </div>
+
+        <!-- Import Js Files -->
+
+        <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="../assets/js/app.min.js"></script>
+        <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+        <script src="../assets/js/sidebarmenu.js"></script>
+
+    </body>
+</html>
