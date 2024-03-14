@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    dir="ltr"
+    data-bs-theme="dark"
+    data-color-theme="Blue_Theme"
+    data-layout="vertical">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Favicon icon-->
+        <link
+            rel="shortcut icon"
+            type="image/png"
+            href="../assets/images/logos/favicon.png"/>
+
+        <!-- Core Css -->
+        <link rel="stylesheet" href="../assets/css/styles.css"/>
+        <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+        <title>삼양식품</title>
+<style>
+#chart-container { height: calc(-260px + 100vh);
+    min-height: 800px; }
+    #chart-container2,  #main{position: relative;
+  height: 260px;
+  overflow: hidden;}
+</style>
+    </head>
+
+    <body>
+
+        <div id="main-wrapper">
+            <!-- Sidebar Start -->
+            <aside class="left-sidebar with-vertical">
+                <!-- ---------------------------------- -->
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="../dark/index.html" class="text-nowrap logo-img">
+                        <img
+                            src="../assets/images/logos/dark-logo.svg"
+                            class="dark-logo"
+                            alt="Logo-Dark"/>
+
+                    </a>
+                    <a
+                        href="javascript:void(0)"
+                        class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
+                        <i class="ti ti-x"></i>
+                    </a>
+                </div>
+
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar="data-simplebar">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">SciChart</span>
+                        </li>
+                       <li class="sidebar-item">
+                            <a class="sidebar-link " href="page2.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-activity-heartbeat"></i>
+                                </span>
+                                <span class="hide-menu">SciChart01</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page3.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-shopping-cart"></i>
+                                </span>
+                                <span class="hide-menu">SciChart02</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item ">
+                            <a class="sidebar-link" href="page4.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-file-analytics"></i>
+                                </span>
+                                <span class="hide-menu">SciChart03</span>
+                            </a>
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu"> Apache ECharts </span>
+                        </li>
+                         <li class="sidebar-item">
+                            <a class="sidebar-link " href="page2_free.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-activity-heartbeat"></i>
+                                </span>
+                                <span class="hide-menu"> Apache ECharts01</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="page3_free.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-shopping-cart"></i>
+                                </span>
+                                <span class="hide-menu"> Apache ECharts02</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item ">
+                            <a class="sidebar-link" href="page4_free.html" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-file-analytics"></i>
+                                </span>
+                                <span class="hide-menu"> Apache ECharts 03</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="fixed-profile p-3 mx-4 mb-2 bg-secondary-subtle rounded mt-3">
+                    <div class="hstack gap-3">
+                        <div class="john-img">
+                            <img
+                                src="../assets/images/profile/user-1.jpg"
+                                class="rounded-circle"
+                                width="40"
+                                height="40"
+                                alt=""/>
+                        </div>
+                        <div class="john-title">
+                            <h6 class="mb-0 fs-4 fw-semibold">홍길동</h6>
+                            <span class="fs-2">최고 경영자</span>
+                        </div>
+                        <button
+                            class="border-0 bg-transparent text-primary ms-auto"
+                            tabindex="0"
+                            type="button"
+                            aria-label="logout"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-title="logout">
+                            <i class="ti ti-power fs-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+            <!-- Sidebar End -->
+            <div class="page-wrapper">
+                <!-- Header Start -->
+                <header class="topbar">
+                    <div class="with-vertical">
+                        <nav class="navbar navbar-expand-lg p-0">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link sidebartoggler nav-icon-hover ms-n3"
+                                        id="headerCollapse"
+                                        href="javascript:void(0)">
+                                        <i class="ti ti-menu-2"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="navbar-nav quick-links d-none d-lg-flex">
+                                <h2>
+                                    매출 현황</h2>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <!-- Header End -->
+
+                <div class="body-wrapper">
+                    <div class="top-head bg-primary-subtle">
+                        <div class="w-100  ">
+                            <form class="d-flex gap-3 p-2 ">
+                                <select class="form-select  w-20" id="inlineFormCustomSelect">
+                                    <option selected="">경영계획 Ver</option>
+                                    <option value="1">2024년 1분기 경영계획 Ver3-1</option>
+                                </select>
+                                <select class="form-select w-20" id="inlineFormCustomSelectPref">
+                                    <option selected="">추정계획 Ver</option>
+                                    <option value="1">2024년 1분기 추정계획 Ver.01</option>
+                                </select>
+                                <div class="input w-20">
+                                    <label class="sr-only"></label>
+                                    <input type="date" class="form-control" id="inlineFormInput" placeholder="date">
+                                </div>
+                                <select class="form-select w-20" id="inlineFormCustomSelectPref">
+                                    <option selected="">증감 분석 :추정 vs 실적
+                                    </option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <!-- Row 1 -->
+                        <div>
+                            <form class="d-flex align-items-center gap-3 m-3">
+                                <div class="d-flex align-items-center">
+                                    <label class="d-block text-nowrap me-3">Capa 기준</label>
+                                    <select class="form-select" id="inlineFormCustomSelectPref">
+                                        <option selected="">설계 Capa</option>
+                                        <option value="1">OEE</option>
+                                    </select>
+                                </div>
+                                <div
+                                    class="btn-group me-1"
+                                    role="group"
+                                    aria-label="Basic radio toggle button group">
+                                    <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="btnradio"
+                                        id="btnradio1"
+                                        checked="checked">
+                                    <label class="btn btn-outline-primary" for="btnradio1">브랜드별</label>
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+                                    <label class="btn btn-outline-primary" for="btnradio3">국가별</label>
+                                </div>
+                                <div class="btn-group me-1" role="group" aria-label="">
+                                    <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="btnradio2"
+                                        id="btnradio2"
+                                        checked="checked">
+                                    <label class="btn btn-outline-primary" for="btnradio2">수량기준</label>
+                                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio4">
+                                    <label class="btn btn-outline-primary" for="btnradio4">매출액기준</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <!-- Weekly Stats -->
+                            <div class="col-sm-5 d-flex align-items-strech">
+                                <div class="card w-100">
+                                    <div class="card-body overflow-hidden">
+                                        <div id="chart">
+                                            <div id="chart-container"></div>
+                                                <script type="text/javascript">
+                                                var dom = document.getElementById('chart-container');
+                                                    var myChart = echarts.init(dom, 'dark', {
+                                                    renderer: 'canvas',
+                                                    useDirtyRect: false
+                                                    });
+                                                    var app = {};
+
+                                                    var option;
+
+                                                    option = {
+                                                        color: [ '#042E9A',
+                                                        '#0038C8',
+                                                        '#1F5CFA',
+                                                        '#02B1B1',
+                                                        '#02B15A',
+                                                        '#028543',
+                                                        '#DE58F4'
+
+                                                        ],
+                                                    title: {
+                                                        text: 'ECharts Example'
+                                                    },
+                                                    tooltip: {},
+                                                    legend: {
+                                                        data: ['sales']
+                                                    },
+                                                    xAxis: {
+                                                        data: ['2022', '2023', '계획', '추정', '실적', '2024']
+                                                    },
+                                                    yAxis: {},
+                                                    series: [
+                                                    {
+                                                        data: [10, 22, 28, 43, 49],
+                                                        type: 'bar',
+                                                        stack: 'x'
+                                                        },
+                                                        {
+                                                        data: [5, 4, 3, 5, 10],
+                                                        type: 'bar',
+                                                        stack: 'x'
+                                                        },
+                                                        {
+                                                        data: [3, 4, 3, 5, 8],
+                                                        type: 'bar',
+                                                        stack: 'x'
+                                                        },
+                                                        {
+                                                        data: [1, 1, 1, 5, 1],
+                                                        type: 'bar',
+                                                        stack: 'x'
+                                                        }
+                                                    ]
+                                                    };
+
+                                                    if (option && typeof option === 'object') {
+                                                    myChart.setOption(option);
+                                                    }
+
+                                                    window.addEventListener('resize', myChart.resize);
+                                                </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Top Performers -->
+                            <div class="col-sm-7">
+                                <div class="row">
+                                    <div class=" col-md-12">
+                                        <!-- Monthly Earnings -->
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title mx-2 fw-semibold">
+                                                    국가별 매출 증감현황
+                                                </h5>
+                                                <div class=" d-flex align-items-center justify-content-center mt-2 mb-5">
+
+                                                       <div id="chart1" style="width: 600px; height: 400px;"></div>
+
+                                                </div>
+                                                <div class="card bg-dark m-0">
+                                                    <div class="card-body ">
+                                                        <div class="d-sm-flex d-block align-items-center justify-content-between mb-3">
+                                                            <div class="mb-3 mb-sm-0">
+                                                                <h5 class="card-title fw-semibold">브랜드 매출 증감현황</h5>
+                                                            </div>
+                                                            <div class="badge text-bg-success fs-3 rounded-4 py-2 px-4">
+                                                                한국
+                                                            </div>
+                                                        </div>
+                                                        <div class=" d-flex align-items-center justify-content-center mt-2">
+                                                              <!-- 첫 번째 차트를 그릴 div -->
+
+                                                            <!-- 두 번째 차트를 그릴 div -->
+                                                            <div id="chart2" style="width: 600px; height: 400px;"></div>
+
+                                                            <script>
+
+
+                                                                // 두 번째 차트 데이터
+                                                                var data2 = {
+                                                                    // 데이터 설정
+                                                                    // 예: x축과 y축 데이터
+                                                                    xAxisData: ['X', 'Y', 'Z', 'W', 'V'],
+                                                                    seriesData: [5, 15, 10, 20, 25]
+                                                                };
+
+                                                                // 첫 번째 차트 생성
+                                                                var chart1 = echarts.init(document.getElementById('chart1'));
+
+                                                                        option1 = {
+                                                                        title: {
+                                                                            text: 'Waterfall Chart'
+                                                                        },
+                                                                        tooltip: {
+                                                                            trigger: 'axis',
+                                                                            axisPointer: {
+                                                                            type: 'shadow'
+                                                                            },
+                                                                            formatter: function (params) {
+                                                                            let tar;
+                                                                            if (params[1] && params[1].value !== '-') {
+                                                                                tar = params[1];
+                                                                            } else {
+                                                                                tar = params[2];
+                                                                            }
+                                                                            return tar && tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+                                                                            }
+                                                                        },
+                                                                        legend: {
+                                                                            data: ['Expenses', 'Income']
+                                                                        },
+                                                                        grid: {
+                                                                            left: '3%',
+                                                                            right: '4%',
+                                                                            bottom: '3%',
+                                                                            containLabel: true
+                                                                        },
+                                                                        xAxis: {
+                                                                            type: 'category',
+                                                                            data: (function () {
+                                                                            let list = [];
+                                                                            for (let i = 1; i <= 11; i++) {
+                                                                                list.push('Nov ' + i);
+                                                                            }
+                                                                            return list;
+                                                                            })()
+                                                                        },
+                                                                        yAxis: {
+                                                                            type: 'value'
+                                                                        },
+                                                                        series: [
+                                                                            {
+                                                                            name: 'Placeholder',
+                                                                            type: 'bar',
+                                                                            stack: 'Total',
+                                                                            silent: true,
+                                                                            itemStyle: {
+                                                                                borderColor: 'transparent',
+                                                                                color: 'transparent'
+                                                                            },
+                                                                            emphasis: {
+                                                                                itemStyle: {
+                                                                                borderColor: 'transparent',
+                                                                                color: 'transparent'
+                                                                                }
+                                                                            },
+                                                                            data1: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
+                                                                            },
+                                                                            {
+                                                                            name: 'Income',
+                                                                            type: 'bar',
+                                                                            stack: 'Total',
+                                                                            label: {
+                                                                                show: true,
+                                                                                position: 'top'
+                                                                            },
+                                                                            data: [900, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-']
+                                                                            },
+                                                                            {
+                                                                            name: 'Expenses',
+                                                                            type: 'bar',
+                                                                            stack: 'Total',
+                                                                            label: {
+                                                                                show: true,
+                                                                                position: 'bottom'
+                                                                            },
+                                                                            data: ['-', '-', '-', 108, 154, '-', '-', '-', 119, 361, 203]
+                                                                            }
+                                                                        ]
+                                                                        };
+                                                                chart1.setOption(option1);
+
+                                                                // 두 번째 차트 생성
+                                                                var chart2 = echarts.init(document.getElementById('chart2'));
+                                                                var option2 = {
+                                                                    title: {
+                                                                        text: '두 번째 차트'
+                                                                    },
+                                                                    xAxis: {
+                                                                        data: data2.xAxisData
+                                                                    },
+                                                                    yAxis: {},
+                                                                    series: [{
+                                                                        type: 'line',
+                                                                        data: data2.seriesData
+                                                                    }]
+                                                                };
+                                                                chart2.setOption(option2);
+                                                            </script>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card bg-dark mt-2 m-0">
+                                                    <div class="card-body ">
+                                                        <div class="d-sm-flex d-block align-items-center justify-content-between mb-3">
+                                                            <div class="mb-3 mb-sm-0">
+                                                                <h5 class="card-title fw-semibold">
+                                                                    거래처 매출 증감현황</h5>
+                                                            </div>
+                                                            <div class="badge text-bg-success fs-3 rounded-4 py-2 px-4">
+                                                                한국
+                                                            </div>
+                                                        </div>
+                                                        <div class=" d-flex align-items-center justify-content-center mt-2">
+                                                            <img src="../assets/images/page2_chart2.svg"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function handleColorTheme(e) {
+                            $("html").attr("data-color-theme", e);
+                            $(e).prop("checked", !0);
+                        }
+                    </script>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Import Js Files -->
+        <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="../assets/js/app.min.js"></script>
+        <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
+
+        <script src="../assets/js/sidebarmenu.js"></script>
+
+
+    </body>
+</html>
